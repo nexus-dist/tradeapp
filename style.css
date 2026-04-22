@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg-dark: #0F0F0F;
+    --bg-light: #1A1A1A;
+    --text-primary: #F0F0F0;
+    --text-secondary: #B0B0B0;
+    --accent-green: #2ECC71;
+    --accent-red: #E74C3C;
+    --accent-blue: #3498DB;
+    --border-color: #2C2C2C;
+    --card-radius: 10px;
+    --transition-fast: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #1c1c1c, #111);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-light);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: border var(--transition-fast), background var(--transition-fast);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background-color: #222;
+}
+
+#generate-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform 0.2s ease;
+}
+
+#generate-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px);
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.signal-block, .chart-block {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: box-shadow var(--transition-fast);
+}
+
+.signal-block:hover, .chart-block:hover {
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+}
+
+.signal-header, .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #181818;
+    border-top-left-radius: var(--card-radius);
+    border-top-right-radius: var(--card-radius);
+}
+
+.signal-result {
+    padding: 25px;
+    text-align: center;
+}
+
+.signal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.signal-pair {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.signal-direction {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.signal-timeframe, .signal-probability {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.signal-placeholder {
+    color: var(--text-secondary);
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+.chart {
+    height: 400px;
+    background-color: var(--bg-dark);
+    border-radius: 0 0 var(--card-radius) var(--card-radius);
+}
+
+.green {
+    color: var(--accent-green);
+}
+
+.red {
+    color: var(--accent-red);
+}
+
+.signal-countdown {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Responsive (Mobile) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .chart {
+        height: 250px;
+    }
+
+    .signal-details {
+        gap: 8px;
+    }
+
+    .signal-pair {
+        font-size: 20px;
+    }
+
+    .signal-direction {
+        font-size: 16px;
+    }
+}

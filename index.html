@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Signal Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://api.dicebear.com/7.x/icons/svg?seed=tradepro" alt="Logo">
+                <h1 id="logo-text">Trade Signal</h1>
+            </div>
+            <div class="settings">
+                <div class="input-group">
+                    <label id="currency-label">Инструмент</label>
+                    <select id="currency-pair">
+                        <option>GBP/USD OTC</option>
+                        <option>USD/CAD OTC</option>
+                        <option>EUR/GBP OTC</option>
+                        <option>EUR/JPY OTC</option>
+                        <option>GBP/JPY OTC</option>
+                        <option>AUD/NZD OTC</option>
+                        <option>USD/RUB OTC</option>
+                        <option>CAD/JPY OTC</option>
+                        <option>CHF/JPY OTC</option>
+                        <option>EUR/CHF OTC</option>
+                        <option>AUD/CAD OTC</option>
+                        <option>AED/CNY OTC</option>
+                        <option>EUR/USD</option>
+                        <option>BTC/USD</option>
+                        <option>XAU/USD</option>
+                        <option>ETH/USD</option>
+                        <option>USD/RUB</option>
+                        <option>USD/JPY</option>
+                        <option>GBP/USD</option>
+                        <option>USD/CHF</option>
+                        <option>AUD/USD</option>
+                        <option>USD/CAD</option>
+                        <option>NZD/USD</option>
+                        <option>EUR/GBP</option>
+                        <option>EUR/JPY</option>
+                        <option>GBP/JPY</option>
+                        <option>AUD/JPY</option>
+                        <option>CHF/JPY</option>
+                        <option>EUR/AUD</option>
+                        <option>EUR/CAD</option>
+                        <option>GBP/AUD</option>
+                        <option>GBP/CAD</option>
+                        <option>AUD/CAD</option>
+                        <option>AUD/CHF</option>
+                        <option>NZD/JPY</option>
+                        <option>NZD/CHF</option>                        
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label id="timeframe-label">Время</label>
+                    <select id="timeframe">
+                        <option>5 секунд</option>
+                        <option>15 секунд</option>
+                        <option>1 минута</option>
+                        <option>3 минуты</option>
+                        <option>5 минут</option>
+                        <option>10 минут</option>
+                    </select>
+                </div>
+                <button id="generate-btn">Получить сигнал</button>
+            </div>
+            <div class="language-selector">
+                <label for="language">Language</label>
+                <select id="language" onchange="changeLanguage()">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="uz">O'zbek</option>
+                </select>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="signal-block">
+                <div class="signal-header">
+                    <h2 id="signal-title">Сигнал</h2>
+                    <span id="signal-time"></span>
+                </div>
+                <div id="signal-result" class="signal-result">
+                    <div class="signal-placeholder">
+                        Нажмите "Получить сигнал"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
